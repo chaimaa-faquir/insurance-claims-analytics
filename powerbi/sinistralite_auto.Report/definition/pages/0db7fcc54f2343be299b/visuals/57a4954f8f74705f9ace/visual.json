@@ -1,0 +1,148 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "57a4954f8f74705f9ace",
+  "position": {
+    "x": 29.669228368965648,
+    "y": 189.57392008394717,
+    "z": 0,
+    "height": 181.78795350475519,
+    "width": 1863.3265234237406,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Carte contrats"
+                }
+              },
+              "queryRef": "_Mesures.Carte contrats",
+              "nativeQueryRef": "Contrats",
+              "displayName": "Contrats"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Carte exposition"
+                }
+              },
+              "queryRef": "_Mesures.Carte exposition",
+              "nativeQueryRef": "Exposition (années-contrats)",
+              "displayName": "Exposition (années-contrats)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence",
+              "nativeQueryRef": "Fréquence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Carte coût moyen"
+                }
+              },
+              "queryRef": "_Mesures.Carte coût moyen",
+              "nativeQueryRef": "Coût moyen",
+              "displayName": "Coût moyen"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Carte prime pure"
+                }
+              },
+              "queryRef": "_Mesures.Carte prime pure",
+              "nativeQueryRef": "Prime pure",
+              "displayName": "Prime pure"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part charge sinistres graves"
+                }
+              },
+              "queryRef": "_Mesures.Part charge sinistres graves",
+              "nativeQueryRef": "Part charge sinistres graves"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mesures"
+                  }
+                },
+                "Property": "Carte contrats"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "smallMultiplesHeader": [
+        {
+          "properties": {
+            "displayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

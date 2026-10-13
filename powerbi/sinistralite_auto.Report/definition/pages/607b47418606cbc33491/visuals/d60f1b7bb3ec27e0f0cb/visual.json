@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "d60f1b7bb3ec27e0f0cb",
+  "position": {
+    "x": 9.25925925925926,
+    "y": 798.14814814814815,
+    "z": 3,
+    "height": 194.44444444444443,
+    "width": 1062.9629629629628,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_policy"
+                    }
+                  },
+                  "Property": "data_block"
+                }
+              },
+              "queryRef": "fact_policy.data_block",
+              "nativeQueryRef": "Lot de contrats",
+              "displayName": "Lot de contrats"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Contrats"
+                }
+              },
+              "queryRef": "_Mesures.Contrats",
+              "nativeQueryRef": "Contrats"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part des contrats"
+                }
+              },
+              "queryRef": "_Mesures.Part des contrats",
+              "nativeQueryRef": "Part des contrats"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part des sinistres sans montant (répartition)"
+                }
+              },
+              "queryRef": "_Mesures.Part des sinistres sans montant (répartition)",
+              "nativeQueryRef": "Part des sinistres sans montant",
+              "displayName": "Part des sinistres sans montant"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence déclarée"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence déclarée",
+              "nativeQueryRef": "Fréquence déclarée"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence valorisée (contrats)"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence valorisée (contrats)",
+              "nativeQueryRef": "Fréquence valorisée",
+              "displayName": "Fréquence valorisée"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

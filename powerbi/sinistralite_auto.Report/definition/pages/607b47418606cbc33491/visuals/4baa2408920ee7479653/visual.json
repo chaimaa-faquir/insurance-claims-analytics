@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "4baa2408920ee7479653",
+  "position": {
+    "x": 9.25925925925926,
+    "y": 120.37037037037037,
+    "z": 1,
+    "height": 206,
+    "width": 1840,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Carte sinistres sans montant"
+                }
+              },
+              "queryRef": "_Mesures.Carte sinistres sans montant",
+              "nativeQueryRef": "Sinistres déclarés sans montant",
+              "displayName": "Sinistres déclarés sans montant"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part sinistres sans montant"
+                }
+              },
+              "queryRef": "_Mesures.Part sinistres sans montant",
+              "nativeQueryRef": "Part des déclarés sans montant",
+              "displayName": "Part des déclarés sans montant"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence déclarée"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence déclarée",
+              "nativeQueryRef": "Fréquence déclarée"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence",
+              "nativeQueryRef": "Fréquence (sinistres valorisés)",
+              "displayName": "Fréquence (sinistres valorisés)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mesures"
+                  }
+                },
+                "Property": "Carte sinistres sans montant"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

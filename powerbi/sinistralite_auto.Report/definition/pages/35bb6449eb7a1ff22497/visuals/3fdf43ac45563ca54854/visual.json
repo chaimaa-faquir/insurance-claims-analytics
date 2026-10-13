@@ -1,0 +1,207 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "3fdf43ac45563ca54854",
+  "position": {
+    "x": 20.037202560695736,
+    "y": 163.63715424568184,
+    "z": 0,
+    "height": 336,
+    "width": 940,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_driver_age_band"
+                    }
+                  },
+                  "Property": "driver_age_band"
+                }
+              },
+              "queryRef": "dim_driver_age_band.driver_age_band",
+              "nativeQueryRef": "Âge du conducteur",
+              "displayName": "Âge du conducteur"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part exposition"
+                }
+              },
+              "queryRef": "_Mesures.Part exposition",
+              "nativeQueryRef": "Part exposition"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence",
+              "nativeQueryRef": "Fréquence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Coût moyen écrêté"
+                }
+              },
+              "queryRef": "_Mesures.Coût moyen écrêté",
+              "nativeQueryRef": "Coût moyen écrêté"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Prime pure écrêtée"
+                }
+              },
+              "queryRef": "_Mesures.Prime pure écrêtée",
+              "nativeQueryRef": "Prime pure écrêtée"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Indice de risque"
+                }
+              },
+              "queryRef": "_Mesures.Indice de risque",
+              "nativeQueryRef": "Indice de risque"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_Mesures"
+                            }
+                          },
+                          "Property": "Indice de risque"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#2E86C1'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "50D"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'midColor'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "100D"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#C0392B'"
+                              }
+                            },
+                            "value": {
+                              "Literal": {
+                                "Value": "200D"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_Mesures.Indice de risque"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

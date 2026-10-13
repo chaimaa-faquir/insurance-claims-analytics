@@ -1,0 +1,6 @@
+# Fichiers binaires : jamais de conversion de fins de ligne
+*.pdf binary
+*.png binary
+*.gif binary
+*.pbix binary
+*.parquet binary

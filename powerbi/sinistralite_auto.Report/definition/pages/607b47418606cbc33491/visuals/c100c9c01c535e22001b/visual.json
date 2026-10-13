@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "c100c9c01c535e22001b",
+  "position": {
+    "x": 1088.8888888888889,
+    "y": 375.92592592592592,
+    "z": 4,
+    "height": 277.77777777777777,
+    "width": 759.25925925925924,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "À retenir :",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  },
+                  {
+                    "value": " 9 412 contrats d'identifiant inférieur à 25 000 (1,4 % du portefeuille) portent 99,8 % des sinistres déclarés sans montant : presque chacun déclare un sinistre, d'où une fréquence déclarée de 206 %. Hors de ce lot, fréquence déclarée et fréquence valorisée coïncident (7,39 %).",
+                    "textStyle": {
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

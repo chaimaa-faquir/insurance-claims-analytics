@@ -1,0 +1,148 @@
+table fact_claim
+	lineageTag: f6ddc5a3-a196-4387-a14c-8df324e541fb
+
+	column claim_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 94b98f17-1b8f-4311-8f8e-5f2304ae2278
+		summarizeBy: sum
+		sourceColumn: claim_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column policy_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 41930a67-9bbb-489c-8b31-09988ed6a6d7
+		summarizeBy: sum
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_amount
+		dataType: double
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 0cea5d6a-f1a1-4e05-aa09-8ab42b52e6a1
+		summarizeBy: sum
+		sourceColumn: claim_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column claim_amount_capped
+		dataType: double
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 0b0c7088-3f1a-45c0-811d-68237020f3e7
+		summarizeBy: sum
+		sourceColumn: claim_amount_capped
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_large_claim
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1f43c28d-5389-4aee-a750-336152e4162f
+		summarizeBy: none
+		sourceColumn: is_large_claim
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_code
+		dataType: string
+		isHidden
+		lineageTag: 1f6929c9-c610-42f9-8fda-712377d3b472
+		summarizeBy: none
+		sourceColumn: region_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_code
+		dataType: string
+		isHidden
+		lineageTag: 99640a04-a08e-46fd-acbc-2d1748399270
+		summarizeBy: none
+		sourceColumn: area_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_age_band
+		dataType: string
+		isHidden
+		lineageTag: fcff6bb5-5c9c-45cc-a618-7d6360478516
+		summarizeBy: none
+		sourceColumn: driver_age_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_age_band
+		dataType: string
+		isHidden
+		lineageTag: 5771f87c-f895-41e2-aa59-931f783717c5
+		summarizeBy: none
+		sourceColumn: vehicle_age_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column bonus_malus_band
+		dataType: string
+		isHidden
+		lineageTag: e666064d-33da-4e4b-bb15-26714b9b3548
+		summarizeBy: none
+		sourceColumn: bonus_malus_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_power_band
+		dataType: string
+		isHidden
+		lineageTag: 72046b61-e4d1-4ed4-be09-3a0052c7030a
+		summarizeBy: none
+		sourceColumn: vehicle_power_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_brand
+		dataType: string
+		isHidden
+		lineageTag: 08010bed-79d3-4e4e-8311-4ebb582391db
+		summarizeBy: none
+		sourceColumn: vehicle_brand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel
+		dataType: string
+		isHidden
+		lineageTag: 356d9ba2-8c92-4e4b-8cc9-9b7dd8184d90
+		summarizeBy: none
+		sourceColumn: fuel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_claim = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "fact_claim.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

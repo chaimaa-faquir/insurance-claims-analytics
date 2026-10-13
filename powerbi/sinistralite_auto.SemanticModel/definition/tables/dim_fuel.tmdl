@@ -1,0 +1,31 @@
+table dim_fuel
+	lineageTag: 60f8436f-5673-4bc7-99c9-41226dbe53bf
+
+	column fuel
+		dataType: string
+		lineageTag: c72dbde1-9e89-4e16-982c-2ad1098409e8
+		summarizeBy: none
+		sourceColumn: fuel
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel_label
+		dataType: string
+		lineageTag: 315ea0ea-a7c2-4206-ab20-1e9f7b97ed65
+		summarizeBy: none
+		sourceColumn: fuel_label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fuel = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "dim_fuel.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

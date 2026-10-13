@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "sinistralite_auto"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "29cb0833-9685-4d95-b3b7-fc3e25ca2ae6"
+  }
+}

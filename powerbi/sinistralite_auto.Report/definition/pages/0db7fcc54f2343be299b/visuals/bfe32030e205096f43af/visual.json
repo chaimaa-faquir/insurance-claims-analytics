@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "bfe32030e205096f43af",
+  "position": {
+    "x": 1005.5555555555555,
+    "y": 690.74074074074065,
+    "z": 4,
+    "height": 351.85185185185185,
+    "width": 800,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "À retenir :",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  },
+                  {
+                    "value": " fréquence de 7,4 % sur les sinistres valorisés et prime pure de 167 € par an. Provence-Alpes-Côte d'Azur (10 % de l'exposition, indice 133) et Rhône-Alpes (13 %, indice 124) sont les régions au-dessus de la moyenne qui pèsent financièrement ; la Corse (137) ne représente que 0,5 % de l'exposition.",
+                    "textStyle": {
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Qualité des données :",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  },
+                  {
+                    "value": " 27 % des sinistres déclarés n'ont pas de montant, presque tous dans un lot anormal de 9 412 contrats (page Qualité des données) ; les indicateurs sont calculés sur les sinistres valorisés.",
+                    "textStyle": {
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

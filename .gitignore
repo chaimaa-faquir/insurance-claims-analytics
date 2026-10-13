@@ -1,0 +1,19 @@
+# Donnees : regenerees par run_pipeline.py (source publique OpenML)
+data/raw/
+data/processed/
+data/powerbi/
+data/*.duckdb
+data/*.duckdb.wal
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Power BI : fichiers temporaires
+powerbi/*.pbix.tmp
+~$*
+
+# Power BI Project (PBIP) : cache de donnees et parametres locaux
+powerbi/**/.pbi/cache.abf
+powerbi/**/.pbi/localSettings.json

@@ -1,0 +1,19 @@
+{
+  "name": "Sinistralite",
+  "dataColors": ["#1F4E79", "#E07B39", "#8FB8DE", "#C0392B", "#5B9279", "#7F7F7F", "#B9A44C", "#6C5B7B"],
+  "background": "#FFFFFF",
+  "foreground": "#252423",
+  "tableAccent": "#1F4E79",
+  "good": "#2E86C1",
+  "neutral": "#FFFFFF",
+  "bad": "#C0392B",
+  "minimum": "#2E86C1",
+  "center": "#FFFFFF",
+  "maximum": "#C0392B",
+  "textClasses": {
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 26, "color": "#1F4E79" },
+    "title": { "fontFace": "Segoe UI Semibold", "fontSize": 13, "color": "#252423" },
+    "header": { "fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#252423" },
+    "label": { "fontFace": "Segoe UI", "fontSize": 10, "color": "#605E5C" }
+  }
+}

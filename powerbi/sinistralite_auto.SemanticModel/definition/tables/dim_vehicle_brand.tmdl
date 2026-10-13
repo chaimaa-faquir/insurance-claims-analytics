@@ -1,0 +1,38 @@
+table dim_vehicle_brand
+	lineageTag: cd492d51-c536-4f97-8be4-acb9177a500a
+
+	column vehicle_brand
+		dataType: string
+		lineageTag: 76f4f4d5-5188-40da-bbe8-424725a0d2c7
+		summarizeBy: none
+		sourceColumn: vehicle_brand
+		sortByColumn: sort_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bb7e7b20-8060-40fd-802b-eaab99a17e96
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_vehicle_brand = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "dim_vehicle_brand.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

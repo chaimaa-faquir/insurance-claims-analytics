@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "b68d5652bda2b180091f",
+  "position": {
+    "x": 37.33629665418529,
+    "y": 149.34518661674116,
+    "z": 0,
+    "height": 206,
+    "width": 1840,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Sinistres graves"
+                }
+              },
+              "queryRef": "_Mesures.Sinistres graves",
+              "nativeQueryRef": "Sinistres graves"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Carte charge graves"
+                }
+              },
+              "queryRef": "_Mesures.Carte charge graves",
+              "nativeQueryRef": "Charge sinistres graves",
+              "displayName": "Charge sinistres graves"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part charge sinistres graves"
+                }
+              },
+              "queryRef": "_Mesures.Part charge sinistres graves",
+              "nativeQueryRef": "Part charge sinistres graves"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Carte charge totale"
+                }
+              },
+              "queryRef": "_Mesures.Carte charge totale",
+              "nativeQueryRef": "Charge totale",
+              "displayName": "Charge totale"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mesures"
+                  }
+                },
+                "Property": "Sinistres graves"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

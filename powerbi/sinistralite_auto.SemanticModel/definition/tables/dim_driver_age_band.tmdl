@@ -1,0 +1,38 @@
+table dim_driver_age_band
+	lineageTag: 208e2962-4a09-4409-ad71-32ce17d08358
+
+	column driver_age_band
+		dataType: string
+		lineageTag: ac97aa7d-9371-44e8-ad4c-f2ea90593096
+		summarizeBy: none
+		sourceColumn: driver_age_band
+		sortByColumn: sort_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 33f0d013-4929-4219-8efd-4783b3c2038b
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_driver_age_band = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "dim_driver_age_band.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

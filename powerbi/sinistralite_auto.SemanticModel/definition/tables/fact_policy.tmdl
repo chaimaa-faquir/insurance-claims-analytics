@@ -1,0 +1,203 @@
+table fact_policy
+	lineageTag: 92b88613-0468-4283-9fb2-12b5c0fdc401
+
+	column policy_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 61ad16ec-ec47-4e53-9d05-451a66c7633c
+		summarizeBy: sum
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column exposure
+		dataType: double
+		lineageTag: 0be97060-e97e-4c62-8e66-0f09919ee0ca
+		summarizeBy: sum
+		sourceColumn: exposure
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column claim_nb
+		dataType: int64
+		formatString: 0
+		lineageTag: 14690784-f309-4d02-b6a0-df77c7898f6b
+		summarizeBy: sum
+		sourceColumn: claim_nb
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_code
+		dataType: string
+		isHidden
+		lineageTag: ad02c191-8ac5-4b8c-89b3-f32417e39f3c
+		summarizeBy: none
+		sourceColumn: region_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_code
+		dataType: string
+		isHidden
+		lineageTag: cb0543fe-6610-463e-9d94-339d27e6aee0
+		summarizeBy: none
+		sourceColumn: area_code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column density
+		dataType: double
+		lineageTag: faadc526-d5b5-4840-a60b-cc8e22d5658e
+		summarizeBy: sum
+		sourceColumn: density
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column driver_age
+		dataType: int64
+		formatString: 0
+		lineageTag: 53fea5b4-6fe0-41a5-96a2-4d652d68a871
+		summarizeBy: sum
+		sourceColumn: driver_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_age_band
+		dataType: string
+		isHidden
+		lineageTag: 5481b509-83ca-4759-914a-a1ec842b8a20
+		summarizeBy: none
+		sourceColumn: driver_age_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_age
+		dataType: int64
+		formatString: 0
+		lineageTag: 21005463-2f8e-4b23-8fcd-0a31771f7208
+		summarizeBy: sum
+		sourceColumn: vehicle_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_age_band
+		dataType: string
+		isHidden
+		lineageTag: eb63fe2f-27f5-440c-9deb-b98746a88eb4
+		summarizeBy: none
+		sourceColumn: vehicle_age_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_power
+		dataType: int64
+		formatString: 0
+		lineageTag: 49251892-5598-40db-85a8-24f0c590344a
+		summarizeBy: sum
+		sourceColumn: vehicle_power
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_power_band
+		dataType: string
+		isHidden
+		lineageTag: 047f10d2-804b-4082-832c-cde07236af02
+		summarizeBy: none
+		sourceColumn: vehicle_power_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_brand
+		dataType: string
+		isHidden
+		lineageTag: d26d5b22-eb3b-4208-b21c-80e20ffedc1b
+		summarizeBy: none
+		sourceColumn: vehicle_brand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fuel
+		dataType: string
+		isHidden
+		lineageTag: 36c61849-0fc8-4f05-8ed3-37f31e40a6a7
+		summarizeBy: none
+		sourceColumn: fuel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column bonus_malus
+		dataType: int64
+		formatString: 0
+		lineageTag: 25af1ff2-a07d-4769-b555-4f0aeaa49710
+		summarizeBy: sum
+		sourceColumn: bonus_malus
+
+		annotation SummarizationSetBy = Automatic
+
+	column bonus_malus_band
+		dataType: string
+		isHidden
+		lineageTag: 91c0dfed-91bf-4285-b802-46c2727a738e
+		summarizeBy: none
+		sourceColumn: bonus_malus_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column claims_without_amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c0c9a2c-f5c4-4edd-8f98-8f9f36bb7269
+		summarizeBy: sum
+		sourceColumn: claims_without_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column claims_with_amount
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b3cbdc4-453b-4aee-8e7a-7053e32c6378
+		summarizeBy: sum
+		sourceColumn: claims_with_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_block
+		dataType: string
+		lineageTag: a2cdc229-04e8-4f56-ac9a-f26f9707f8a6
+		summarizeBy: none
+		sourceColumn: data_block
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_policy = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "fact_policy.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

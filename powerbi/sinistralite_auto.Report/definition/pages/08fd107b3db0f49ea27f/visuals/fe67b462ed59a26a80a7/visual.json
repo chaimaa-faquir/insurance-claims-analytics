@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "fe67b462ed59a26a80a7",
+  "position": {
+    "x": 34.863567554203414,
+    "y": 1125.75376090922,
+    "z": 3,
+    "height": 144.46575673390507,
+    "width": 1840.4541611305713,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "À retenir : ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  },
+                  {
+                    "value": "88 sinistres graves (> 50 000 €), soit 0,3 % des sinistres, représentent 29,9 % de la charge ; le plus gros atteint 4,1 M€. La région Centre en porte 33 pour 25 attendus au vu de son exposition (29 %) : sa charge brute (19,1 M€) dépasse de près de 70 % sa charge écrêtée (11,3 M€), alors que son indice écrêté (85) est inférieur à la moyenne.",
+                    "textStyle": {
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

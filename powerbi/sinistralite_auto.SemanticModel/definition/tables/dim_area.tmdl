@@ -1,0 +1,46 @@
+table dim_area
+	lineageTag: 3ca5f703-7766-4dbc-a2ce-c3ac7bb27708
+
+	column area_code
+		dataType: string
+		lineageTag: 93e094dc-e097-4e95-912f-e07819b14a1d
+		summarizeBy: none
+		sourceColumn: area_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_label
+		dataType: string
+		lineageTag: e99e2008-1a45-4a42-99c9-0397fa6e48b0
+		summarizeBy: none
+		sourceColumn: area_label
+		sortByColumn: sort_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: eb0a9b9c-5111-4f34-9123-26d5d20bc3ac
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_area = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "dim_area.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

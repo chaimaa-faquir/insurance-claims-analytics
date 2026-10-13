@@ -1,0 +1,31 @@
+table dim_region
+	lineageTag: 9ead867c-b89d-403f-91ba-20f61602f7d0
+
+	column region_code
+		dataType: string
+		lineageTag: a0848356-b3fb-4c26-9f55-a82804820b08
+		summarizeBy: none
+		sourceColumn: region_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column region_name
+		dataType: string
+		lineageTag: def298c5-830c-4985-9e5a-ded05821caef
+		summarizeBy: none
+		sourceColumn: region_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_region = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "dim_region.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,257 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "ae1c973338c849fa6fb4",
+  "position": {
+    "x": 10.786516853932584,
+    "y": 0,
+    "z": 0,
+    "height": 197.75280898876403,
+    "width": 1815.7303370786517,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Contrats"
+                }
+              },
+              "queryRef": "_Mesures.Contrats",
+              "nativeQueryRef": "Contrats"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Exposition"
+                }
+              },
+              "queryRef": "_Mesures.Exposition",
+              "nativeQueryRef": "Exposition"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Sinistres déclarés"
+                }
+              },
+              "queryRef": "_Mesures.Sinistres déclarés",
+              "nativeQueryRef": "Sinistres déclarés"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence",
+              "nativeQueryRef": "Fréquence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Sinistres avec montant"
+                }
+              },
+              "queryRef": "_Mesures.Sinistres avec montant",
+              "nativeQueryRef": "Sinistres avec montant"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Charge sinistres"
+                }
+              },
+              "queryRef": "_Mesures.Charge sinistres",
+              "nativeQueryRef": "Charge sinistres"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Coût moyen"
+                }
+              },
+              "queryRef": "_Mesures.Coût moyen",
+              "nativeQueryRef": "Coût moyen"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Coût moyen écrêté"
+                }
+              },
+              "queryRef": "_Mesures.Coût moyen écrêté",
+              "nativeQueryRef": "Coût moyen écrêté"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Prime pure"
+                }
+              },
+              "queryRef": "_Mesures.Prime pure",
+              "nativeQueryRef": "Prime pure"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Prime pure écrêtée"
+                }
+              },
+              "queryRef": "_Mesures.Prime pure écrêtée",
+              "nativeQueryRef": "Prime pure écrêtée"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part charge sinistres graves"
+                }
+              },
+              "queryRef": "_Mesures.Part charge sinistres graves",
+              "nativeQueryRef": "Part charge sinistres graves"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence déclarée"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence déclarée",
+              "nativeQueryRef": "Fréquence déclarée"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Sinistres sans montant"
+                }
+              },
+              "queryRef": "_Mesures.Sinistres sans montant",
+              "nativeQueryRef": "Sinistres sans montant"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Part sinistres sans montant"
+                }
+              },
+              "queryRef": "_Mesures.Part sinistres sans montant",
+              "nativeQueryRef": "Part sinistres sans montant"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fitToContent'"
+                }
+              }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

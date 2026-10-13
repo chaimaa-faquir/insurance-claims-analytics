@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "3fc44dcee9ebc1e09233",
+  "position": {
+    "x": 9.25925925925926,
+    "y": 362.96296296296293,
+    "z": 2,
+    "height": 405.55555555555554,
+    "width": 1062.9629629629628,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_policy"
+                    }
+                  },
+                  "Property": "data_block"
+                }
+              },
+              "queryRef": "fact_policy.data_block",
+              "nativeQueryRef": "data_block",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence déclarée"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence déclarée",
+              "nativeQueryRef": "Fréquence déclarée"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence valorisée (contrats)"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence valorisée (contrats)",
+              "nativeQueryRef": "Fréquence valorisée",
+              "displayName": "Fréquence valorisée"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mesures"
+                  }
+                },
+                "Property": "Fréquence déclarée"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fréquence déclarée vs valorisée par lot de contrats'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Lot anormal : 206 % déclarés, 6,4 % valorisés · Reste : 7,39 % dans les deux cas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

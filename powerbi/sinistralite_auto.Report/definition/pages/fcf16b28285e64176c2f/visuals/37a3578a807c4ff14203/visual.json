@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "37a3578a807c4ff14203",
+  "position": {
+    "x": 10,
+    "y": 238.57142857142858,
+    "z": 1,
+    "height": 301.42857142857144,
+    "width": 1407.1428571428573,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_driver_age_band"
+                    }
+                  },
+                  "Property": "driver_age_band"
+                }
+              },
+              "queryRef": "dim_driver_age_band.driver_age_band",
+              "nativeQueryRef": "driver_age_band"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Fréquence"
+                }
+              },
+              "queryRef": "_Mesures.Fréquence",
+              "nativeQueryRef": "Fréquence"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Indice de risque"
+                }
+              },
+              "queryRef": "_Mesures.Indice de risque",
+              "nativeQueryRef": "Indice de risque"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

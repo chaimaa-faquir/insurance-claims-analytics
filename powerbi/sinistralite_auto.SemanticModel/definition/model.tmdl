@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DossierDonnees","fact_policy","fact_claim","dim_region","dim_area","dim_driver_age_band","dim_vehicle_age_band","dim_bonus_malus_band","dim_vehicle_power_band","dim_fuel","dim_vehicle_brand","_Mesures"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table fact_policy
+ref table fact_claim
+ref table dim_region
+ref table dim_area
+ref table dim_driver_age_band
+ref table dim_vehicle_age_band
+ref table dim_bonus_malus_band
+ref table dim_vehicle_power_band
+ref table dim_fuel
+ref table dim_vehicle_brand
+ref table _Mesures
+
+ref cultureInfo en-US
+

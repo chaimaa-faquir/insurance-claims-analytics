@@ -1,0 +1,128 @@
+table _Mesures
+	lineageTag: efc20568-90c3-4860-a418-2bf64399cf4b
+
+	measure Contrats = COUNTROWS ( fact_policy )
+		formatString: #,0
+		lineageTag: 6912e4d5-f803-4927-8887-1a9ec8cc51d3
+
+	measure Exposition = SUM ( fact_policy[exposure] )
+		formatString: #,0
+		lineageTag: e894750a-aae5-4820-9549-ef6ee12c44e2
+
+	measure 'Sinistres déclarés' = SUM ( fact_policy[claim_nb] )
+		formatString: #,0
+		lineageTag: db9cdc0d-911f-402e-8f41-0ec853799bf1
+
+	measure Fréquence = DIVIDE ( [Sinistres avec montant], [Exposition] )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 68c8a9fc-0115-4feb-bb16-2c1c6a2b6089
+
+	measure 'Sinistres avec montant' = COUNTROWS ( fact_claim )
+		formatString: #,0
+		lineageTag: d59b8e4d-5056-4312-8e9e-f2544e0b6a3b
+
+	measure 'Charge sinistres' = SUM ( fact_claim[claim_amount] )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 58cf3763-47c4-450e-b5be-c5b3a4ddfa16
+
+	measure 'Charge écrêtée' = SUM ( fact_claim[claim_amount_capped] )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: ce0ed810-b2d0-4608-93b8-608beb933c20
+
+	measure 'Coût moyen' = DIVIDE ( [Charge sinistres], [Sinistres avec montant] )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: c8b1556f-4816-4a3d-bbef-ea583ce43bea
+
+	measure 'Coût moyen écrêté' = DIVIDE ( [Charge écrêtée], [Sinistres avec montant] )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 0bc3bf02-0693-464e-a622-9a3279f6df2c
+
+	measure 'Prime pure' = [Fréquence] * [Coût moyen]
+		formatString: #,0.0\ "€";-#,0.0\ "€";#,0.0\ "€"
+		lineageTag: 8bf808b3-615d-4721-978c-1a137b9facce
+
+	measure 'Prime pure écrêtée' = [Fréquence] * [Coût moyen écrêté]
+		formatString: #,0.0\ "€";-#,0.0\ "€";#,0.0\ "€"
+		lineageTag: 17f6c516-0309-4e24-907e-b25b01a0492b
+
+	measure 'Prime pure écrêtée portefeuille' = CALCULATE ( [Prime pure écrêtée], ALLSELECTED () )
+		formatString: #,0.0\ "€";-#,0.0\ "€";#,0.0\ "€"
+		lineageTag: 2064916d-b615-4a9a-b536-fa4a7d9d5e1b
+
+	measure 'Indice de risque' = DIVIDE ( [Prime pure écrêtée], [Prime pure écrêtée portefeuille] ) * 100
+		formatString: 0
+		lineageTag: 2ab6dd5a-76f2-44cc-9292-a0a152dea18f
+
+	measure 'Part exposition' = DIVIDE ( [Exposition], CALCULATE ( [Exposition], ALLSELECTED () ) )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 571940a2-96fc-4080-8e45-5ae020c67ee0
+
+	measure 'Part charge sinistres graves' = DIVIDE ( CALCULATE ( [Charge sinistres], fact_claim[is_large_claim] = TRUE () ), [Charge sinistres] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b33f7080-cedd-4945-8851-8a9b0f07de8b
+
+	measure 'Sinistres graves' = CALCULATE ( [Sinistres avec montant], fact_claim[is_large_claim] = TRUE () )
+		formatString: 0
+		lineageTag: 443c03ae-3357-4f4a-880b-f75955c94539
+
+	measure 'Charge sinistres graves' = CALCULATE ( [Charge sinistres], fact_claim[is_large_claim] = TRUE () )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		lineageTag: 26af5d47-9d1f-46c5-bd0f-a6f757b6d8b8
+
+	measure 'Fréquence déclarée' = DIVIDE ( [Sinistres déclarés], [Exposition] )
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 842cc7d4-45ff-45fa-a721-e99830995752
+
+	measure 'Sinistres sans montant' = SUM ( fact_policy[claims_without_amount] )
+		formatString: #,0
+		lineageTag: 55723551-e430-4c7b-bb74-c527293e76b0
+
+	measure 'Part sinistres sans montant' = DIVIDE ( [Sinistres sans montant], [Sinistres déclarés] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e4652b76-da76-4608-9215-c853c9eb34ba
+
+	measure 'Carte charge graves' = FORMAT ( [Charge sinistres graves] / 1000000, "0.0", "fr-FR" ) & " M€"
+		lineageTag: 3b1cf956-4c5e-40dd-8249-63fcec518e73
+
+	measure 'Carte charge totale' = FORMAT ( [Charge sinistres] / 1000000, "0.0", "fr-FR" ) & " M€"
+		lineageTag: 60b8c57c-369e-4752-88f8-350e74d7a7b9
+
+	measure 'Carte contrats' = FORMAT ( [Contrats], "#,0", "fr-FR" )
+		lineageTag: 11be02d8-9cd1-41ca-842c-526b16e52463
+
+	measure 'Carte exposition' = FORMAT ( [Exposition], "#,0", "fr-FR" )
+		lineageTag: 8ac395c5-7aeb-4987-9f02-d0b715580ef6
+
+	measure 'Carte coût moyen' = FORMAT ( [Coût moyen], "#,0", "fr-FR" ) & " €"
+		lineageTag: 7fdb7113-8925-4a61-8363-a2eb6eb950bc
+
+	measure 'Carte prime pure' = FORMAT ( [Prime pure], "#,0", "fr-FR" ) & " €"
+		lineageTag: 16fd9f98-aff6-44c5-8c14-1b8ee1d3a95b
+
+	measure 'Fréquence valorisée (contrats)' = DIVIDE ( SUM ( fact_policy[claims_with_amount] ), [Exposition] )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 52ad84c6-a3f5-40d9-a119-2566fd7af119
+
+	measure 'Part des sinistres sans montant (répartition)' = DIVIDE ( [Sinistres sans montant], CALCULATE ( [Sinistres sans montant], ALLSELECTED () ) )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: b7f849d3-68e5-4208-a8cb-6f06d83cbb99
+
+	measure 'Part des contrats' = DIVIDE ( [Contrats], CALCULATE ( [Contrats], ALLSELECTED () ) )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 795fd1f2-5a70-4fc3-b0ce-0f7b1fe22e96
+
+	measure 'Carte sinistres sans montant' = FORMAT ( [Sinistres sans montant], "#,0", "fr-FR" )
+		lineageTag: 7756d755-49fe-49eb-acdb-b7fe22720a66
+
+	partition _Mesures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

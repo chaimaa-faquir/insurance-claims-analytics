@@ -1,0 +1,38 @@
+table dim_vehicle_power_band
+	lineageTag: 016378aa-4f3e-41b9-8afe-224987e43389
+
+	column vehicle_power_band
+		dataType: string
+		lineageTag: ffc93cea-67ec-4ef9-b382-39bb0c8234a2
+		summarizeBy: none
+		sourceColumn: vehicle_power_band
+		sortByColumn: sort_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3eed7c2c-6b46-4645-839e-16f42dc5a41e
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_vehicle_power_band = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "dim_vehicle_power_band.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

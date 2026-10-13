@@ -1,0 +1,67 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "3ad0797befdffd835ff9",
+  "position": {
+    "x": 15.992518722067881,
+    "y": 861.484654321174,
+    "z": 3,
+    "height": 196,
+    "width": 1884,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "À retenir :",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  },
+                  {
+                    "value": " le risque se concentre chez les conducteurs débutants et en malus (indice de 67 au bonus maximal, 369 au coefficient de départ de 100, 496 en malus). Les 18-24 ans ont un indice de 261 ; tout nouveau conducteur démarrant à 100, l'âge et le bonus-malus sont liés.",
+                    "textStyle": {
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Point de vigilance : ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt"
+                    }
+                  },
+                  {
+                    "value": "la fréquence déclarée des véhicules de moins d'un an (31 %) est gonflée par un lot anormal de contrats (page Qualité des données) ; sur les sinistres valorisés, leur indice est de 106, proche de la moyenne.",
+                    "textStyle": {
+                      "fontSize": "20pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

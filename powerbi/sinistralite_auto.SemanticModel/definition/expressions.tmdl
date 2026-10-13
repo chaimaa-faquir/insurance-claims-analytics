@@ -1,0 +1,7 @@
+expression DossierDonnees = "C:\Users\chaim\Projets\insurance-claims-analytics\data\powerbi\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ba125604-6e69-43eb-ad53-acc4465701d4
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

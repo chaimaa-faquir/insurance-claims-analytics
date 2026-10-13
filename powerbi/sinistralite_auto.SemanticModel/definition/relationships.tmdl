@@ -1,0 +1,64 @@
+relationship AutoDetected_69054f84-079f-4e6b-89bc-9eb2f67cb960
+	fromColumn: fact_policy.region_code
+	toColumn: dim_region.region_code
+
+relationship AutoDetected_fce6b34a-610f-47dc-893c-5f5fe5b3e6a9
+	fromColumn: fact_claim.region_code
+	toColumn: dim_region.region_code
+
+relationship AutoDetected_e4b9a6a7-47e5-4597-a095-95910975c7b8
+	fromColumn: fact_policy.area_code
+	toColumn: dim_area.area_code
+
+relationship AutoDetected_214d8611-4f48-4db3-9b21-b327d03f5743
+	fromColumn: fact_claim.area_code
+	toColumn: dim_area.area_code
+
+relationship AutoDetected_b67b453a-ea4a-4222-960e-17c570c53a86
+	fromColumn: fact_policy.driver_age_band
+	toColumn: dim_driver_age_band.driver_age_band
+
+relationship AutoDetected_80f335c0-379d-42ea-a51f-8b8fb7c9bfc0
+	fromColumn: fact_claim.driver_age_band
+	toColumn: dim_driver_age_band.driver_age_band
+
+relationship AutoDetected_2116500f-2c6e-4e93-9d3b-2d600c09a0aa
+	fromColumn: fact_policy.vehicle_age_band
+	toColumn: dim_vehicle_age_band.vehicle_age_band
+
+relationship AutoDetected_58d66196-348c-42c7-98c0-690a9eb07601
+	fromColumn: fact_claim.vehicle_age_band
+	toColumn: dim_vehicle_age_band.vehicle_age_band
+
+relationship AutoDetected_fe9a55a7-4da1-4b7c-9966-14171a804d67
+	fromColumn: fact_policy.vehicle_power_band
+	toColumn: dim_vehicle_power_band.vehicle_power_band
+
+relationship AutoDetected_6a68170f-e44b-4d9e-89d8-7c6358c2c9ec
+	fromColumn: fact_claim.vehicle_power_band
+	toColumn: dim_vehicle_power_band.vehicle_power_band
+
+relationship AutoDetected_01dbf043-939a-434d-b6d5-a1e4a8bc9b6e
+	fromColumn: fact_policy.vehicle_brand
+	toColumn: dim_vehicle_brand.vehicle_brand
+
+relationship AutoDetected_73876d47-f00c-4610-8ed9-8169d2ea6d94
+	fromColumn: fact_claim.vehicle_brand
+	toColumn: dim_vehicle_brand.vehicle_brand
+
+relationship AutoDetected_4429766f-22d2-4ecb-9f4d-b3146a294ae9
+	fromColumn: fact_policy.fuel
+	toColumn: dim_fuel.fuel
+
+relationship AutoDetected_b52f2c02-4a79-446e-987f-0545f8e5989f
+	fromColumn: fact_claim.fuel
+	toColumn: dim_fuel.fuel
+
+relationship AutoDetected_e5264c35-5a15-45f3-a85e-4cf564e6e2a1
+	fromColumn: fact_policy.bonus_malus_band
+	toColumn: dim_bonus_malus_band.bonus_malus_band
+
+relationship AutoDetected_1f71a5ba-9a78-429e-bf70-ba70838a892c
+	fromColumn: fact_claim.bonus_malus_band
+	toColumn: dim_bonus_malus_band.bonus_malus_band
+

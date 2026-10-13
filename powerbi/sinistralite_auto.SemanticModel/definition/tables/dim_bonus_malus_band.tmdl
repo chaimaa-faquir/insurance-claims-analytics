@@ -1,0 +1,38 @@
+table dim_bonus_malus_band
+	lineageTag: 4988e019-e966-4fa6-8ac6-df1eba6cb530
+
+	column bonus_malus_band
+		dataType: string
+		lineageTag: 7296a466-9fb6-4ed6-bc8c-3fbdd0e3fb76
+		summarizeBy: none
+		sourceColumn: bonus_malus_band
+		sortByColumn: sort_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 77786d4f-5a31-4cd3-ab95-b925a04d9df8
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_bonus_malus_band = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DossierDonnees & "dim_bonus_malus_band.parquet"))
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
